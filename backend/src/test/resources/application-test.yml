@@ -10,3 +10,13 @@ spring:
     properties:
       hibernate:
         format_sql: true
+app:
+  security:
+    jwt:
+      secret: bXVsdGlzdWN1cnNhbC10ZXN0LXNlY3JldC1rZXktMjAyNi1sb25nLWVub3VnaA==
+      expiration: 86400000
+  bootstrap:
+    admin:
+      name: Test Admin
+      email: admin@multisucursal.dev
+      password: Admin12345!
