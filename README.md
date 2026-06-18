@@ -61,6 +61,7 @@ La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
 
 - [Etapa 1 - Base del proyecto](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-01-base-arquitectura.md)
 - [Etapa 2 - Modelo y persistencia](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-02-modelo-persistencia.md)
+- [Etapa 3 - Autenticacion JWT](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-03-autenticacion-jwt.md)
 
 ### Frontend
 
