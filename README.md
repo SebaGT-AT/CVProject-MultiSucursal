@@ -1,0 +1,66 @@
+# Sistema de Inventario Multi-Sucursal
+
+Proyecto de portafolio profesional orientado a demostrar capacidades de desarrollo backend con Java 21, Spring Boot, Spring Security, JWT, JPA/Hibernate y PostgreSQL, acompañado de un frontend en React + Vite + Bootstrap.
+
+## Stack
+
+- Java 21
+- Spring Boot
+- Spring Security
+- JWT
+- Spring Data JPA
+- Hibernate
+- PostgreSQL
+- React + Vite
+- Bootstrap
+- Maven
+- Git
+
+## Estructura del repositorio
+
+```text
+MultiSucursal/
+├── backend/
+├── frontend/
+├── docs/
+├── docker-compose.yml
+└── README.md
+```
+
+## Roadmap de construcción
+
+1. Base del proyecto y arquitectura inicial
+2. Persistencia, PostgreSQL y modelo base de dominio
+3. Autenticación con Spring Security + JWT
+4. Módulo de productos y categorías
+5. Módulo de sucursales
+6. Stock por sucursal y movimientos
+7. Compras
+8. Ventas
+9. Dashboard e indicadores
+10. Hardening, testing y despliegue
+
+## Cómo ejecutar más adelante
+
+### Base de datos
+
+```bash
+docker compose up -d
+```
+
+### Backend
+
+```bash
+cd backend
+mvn test
+```
+
+La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`. Si no existen, toma valores locales por defecto para PostgreSQL.
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```

@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe6;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(92, 72, 46, 0.12);
+  --text: #1f1a17;
+  --muted: #6d6258;
+  --accent: #b85c38;
+  --accent-dark: #8f3f21;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(184, 92, 56, 0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(63, 121, 145, 0.18), transparent 28%),
+    linear-gradient(135deg, #f7f1e8 0%, #efe6db 100%);
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.brand-mark {
+  letter-spacing: 0.04em;
+  color: var(--accent-dark);
+}
+
+.hero-panel,
+.content-card,
+.feature-card {
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 45px rgba(46, 31, 20, 0.08);
+  border-radius: 24px;
+}
+
+.feature-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px rgba(46, 31, 20, 0.12);
+}
+
+.lead,
+.text-secondary,
+li {
+  color: var(--muted) !important;
+}
