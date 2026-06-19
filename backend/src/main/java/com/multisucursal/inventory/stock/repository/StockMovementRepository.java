@@ -9,5 +9,6 @@ public interface StockMovementRepository extends JpaRepository<StockMovement, Lo
     List<StockMovement> findByBranchIdOrderByOccurredAtDesc(Long branchId);
 
     List<StockMovement> findByProductIdOrderByOccurredAtDesc(Long productId);
-}
 
+    boolean existsByProductId(Long productId);
+}
