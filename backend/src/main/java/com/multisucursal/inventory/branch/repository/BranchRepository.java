@@ -9,5 +9,8 @@ public interface BranchRepository extends JpaRepository<Branch, Long> {
     boolean existsByCodeIgnoreCase(String code);
 
     Optional<Branch> findByCodeIgnoreCase(String code);
-}
 
+    boolean existsByEmailIgnoreCase(String email);
+
+    Optional<Branch> findByEmailIgnoreCase(String email);
+}
