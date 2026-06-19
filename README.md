@@ -64,6 +64,7 @@ La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
 - [Etapa 3 - Autenticacion JWT](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-03-autenticacion-jwt.md)
 - [Etapa 4 - Productos y categorias](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-04-productos-categorias.md)
 - [Etapa 5 - Sucursales](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-05-sucursales.md)
+- [Etapa 6 - Stock y movimientos](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-06-stock-movimientos.md)
 
 ### Frontend
 
