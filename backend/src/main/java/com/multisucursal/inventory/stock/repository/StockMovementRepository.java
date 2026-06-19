@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StockMovementRepository extends JpaRepository<StockMovement, Long> {
 
+    List<StockMovement> findAllByOrderByOccurredAtDesc();
+
     List<StockMovement> findByBranchIdOrderByOccurredAtDesc(Long branchId);
 
     List<StockMovement> findByProductIdOrderByOccurredAtDesc(Long productId);

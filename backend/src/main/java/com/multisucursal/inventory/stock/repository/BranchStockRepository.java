@@ -13,6 +13,12 @@ public interface BranchStockRepository extends JpaRepository<BranchStock, Long> 
 
     List<BranchStock> findByProductId(Long productId);
 
+    List<BranchStock> findAllByOrderByBranchNameAscProductNameAsc();
+
+    List<BranchStock> findByBranchIdOrderByProductNameAsc(Long branchId);
+
+    List<BranchStock> findByProductIdOrderByBranchNameAsc(Long productId);
+
     boolean existsByBranchId(Long branchId);
 
     boolean existsByProductId(Long productId);
