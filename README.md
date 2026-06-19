@@ -67,6 +67,7 @@ La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
 - [Etapa 6 - Stock y movimientos](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-06-stock-movimientos.md)
 - [Etapa 7 - Compras](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-07-compras.md)
 - [Etapa 8 - Ventas](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-08-ventas.md)
+- [Etapa 9 - Dashboard e indicadores](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-09-dashboard-indicadores.md)
 
 ### Frontend
 
