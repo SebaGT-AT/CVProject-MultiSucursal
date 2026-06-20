@@ -1,9 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
+import { getModuleByPath } from "../lib/modules";
 
 function AppNavbar() {
+  const location = useLocation();
   const navigate = useNavigate();
   const { isAuthenticated, logout, user } = useAuth();
+  const currentModule = getModuleByPath(location.pathname);
 
   function handleLogout() {
     logout();
@@ -20,6 +23,9 @@ function AppNavbar() {
         <div className="d-flex align-items-center gap-3">
           {isAuthenticated ? (
             <>
+              <div className="navbar-module-chip">
+                {currentModule.label}
+              </div>
               <div className="text-end">
                 <div className="navbar-user">{user?.name}</div>
                 <div className="navbar-role">{user?.role}</div>

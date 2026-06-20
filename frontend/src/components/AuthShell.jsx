@@ -1,16 +1,11 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import AppNavbar from "./AppNavbar";
-
-const sections = [
-  { to: "/app/dashboard", label: "Dashboard" },
-  { to: "/app/productos", label: "Productos" },
-  { to: "/app/sucursales", label: "Sucursales" },
-  { to: "/app/stock", label: "Stock" },
-  { to: "/app/compras", label: "Compras" },
-  { to: "/app/ventas", label: "Ventas" }
-];
+import { appModules, getModuleByPath } from "../lib/modules";
 
 function AuthShell() {
+  const location = useLocation();
+  const currentModule = getModuleByPath(location.pathname);
+
   return (
     <div className="app-shell">
       <AppNavbar />
@@ -22,26 +17,40 @@ function AuthShell() {
               <span className="badge text-bg-warning text-dark mb-2">
                 Frontend operativo
               </span>
-              <h1 className="h3 mb-1">Panel de administracion</h1>
+              <h1 className="h3 mb-1">{currentModule.title}</h1>
               <p className="text-secondary mb-0">
-                Base lista para operar con JWT, dashboard y modulos
-                funcionales conectados al backend.
+                {currentModule.description}
               </p>
             </div>
 
             <nav className="section-tabs">
-              {sections.map((section) => (
+              {appModules.map((module) => (
                 <NavLink
-                  key={section.to}
-                  to={section.to}
+                  key={module.to}
+                  to={module.to}
                   className={({ isActive }) =>
                     `section-tab${isActive ? " active" : ""}`
                   }
                 >
-                  {section.label}
+                  {module.label}
                 </NavLink>
               ))}
             </nav>
+          </div>
+        </section>
+
+        <section className="module-summary-strip mb-4">
+          <div className="module-summary-card">
+            <span className="session-label">Modulo actual</span>
+            <strong>{currentModule.label}</strong>
+          </div>
+          <div className="module-summary-card">
+            <span className="session-label">Objetivo</span>
+            <strong>{currentModule.title}</strong>
+          </div>
+          <div className="module-summary-card">
+            <span className="session-label">Cobertura</span>
+            <strong>Frontend conectado al backend</strong>
           </div>
         </section>
 

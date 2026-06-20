@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import { formatCurrency, formatLongDate } from "../lib/formatters";
 import { apiRequest } from "../lib/api";
+import { appModules } from "../lib/modules";
 
 function DashboardHomePage() {
   const { token, user } = useAuth();
@@ -67,6 +69,31 @@ function DashboardHomePage() {
             <div className="identity-pill dashboard-date-pill">
               <span>{formatLongDate(dashboard?.generatedDate)}</span>
             </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="col-12">
+        <section className="content-card p-4">
+          <div className="d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-center mb-3">
+            <div>
+              <h3 className="h5 mb-1">Accesos rapidos</h3>
+              <p className="text-secondary mb-0">
+                Entrada directa a los modulos funcionales principales del sistema.
+              </p>
+            </div>
+          </div>
+
+          <div className="quick-links-grid">
+            {appModules
+              .filter((module) => module.to !== "/app/dashboard")
+              .map((module) => (
+                <Link className="quick-link-card" key={module.to} to={module.to}>
+                  <span className="session-label">{module.label}</span>
+                  <strong>{module.title}</strong>
+                  <span className="text-secondary">{module.description}</span>
+                </Link>
+              ))}
           </div>
         </section>
       </div>

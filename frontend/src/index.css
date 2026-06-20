@@ -86,6 +86,17 @@ li {
   letter-spacing: 0.08em;
 }
 
+.navbar-module-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(184, 92, 56, 0.1);
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
 .auth-page {
   min-height: 100vh;
   display: grid;
@@ -199,6 +210,21 @@ li {
   color: #fff;
   background: var(--accent-dark);
   border-color: var(--accent-dark);
+}
+
+.module-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.module-summary-card {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(92, 72, 46, 0.1);
+  background: rgba(255, 255, 255, 0.58);
 }
 
 .identity-pill {
@@ -458,6 +484,29 @@ li {
   background: rgba(240, 201, 162, 0.22);
 }
 
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.quick-link-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(92, 72, 46, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: rgba(184, 92, 56, 0.22);
+}
+
 @media (max-width: 991.98px) {
   .auth-page {
     grid-template-columns: 1fr;
@@ -475,6 +524,10 @@ li {
   }
 
   .session-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-summary-strip {
     grid-template-columns: 1fr;
   }
 
@@ -497,6 +550,10 @@ li {
   }
 
   .purchase-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-links-grid {
     grid-template-columns: 1fr;
   }
 }
