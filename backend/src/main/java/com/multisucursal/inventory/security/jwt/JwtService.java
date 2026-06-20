@@ -1,5 +1,6 @@
 package com.multisucursal.inventory.security.jwt;
 
+import com.multisucursal.inventory.config.AppSecurityProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -8,19 +9,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 import javax.crypto.SecretKey;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class JwtService {
 
-    @Value("${app.security.jwt.secret}")
-    private String jwtSecret;
-
-    @Value("${app.security.jwt.expiration}")
-    private long jwtExpiration;
+    private final AppSecurityProperties appSecurityProperties;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -38,7 +36,7 @@ public class JwtService {
             .toList();
 
         Date now = new Date();
-        Date expirationDate = new Date(now.getTime() + jwtExpiration);
+        Date expirationDate = new Date(now.getTime() + appSecurityProperties.getJwt().getExpiration());
 
         return Jwts.builder()
             .claim("roles", roles)
@@ -67,8 +65,7 @@ public class JwtService {
     }
 
     private SecretKey getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(jwtSecret);
+        byte[] keyBytes = Decoders.BASE64.decode(appSecurityProperties.getJwt().getSecret());
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
-

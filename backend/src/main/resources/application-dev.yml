@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/multisucursal_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:bXVsdGlzdWN1cnNhbC1kZXZlbG9wbWVudC1zZWNyZXQta2V5LTIwMjYtY2hhbmdlLW1l}
+      expiration: ${JWT_EXPIRATION:86400000}
+    cors:
+      allowed-origins:
+        - ${FRONTEND_ORIGIN:http://localhost:5173}
+  bootstrap:
+    admin:
+      name: ${BOOTSTRAP_ADMIN_NAME:Administrador Principal}
+      email: ${BOOTSTRAP_ADMIN_EMAIL:admin@multisucursal.dev}
+      password: ${BOOTSTRAP_ADMIN_PASSWORD:Admin12345!}

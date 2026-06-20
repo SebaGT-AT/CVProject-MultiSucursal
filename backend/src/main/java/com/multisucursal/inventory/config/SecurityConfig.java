@@ -24,7 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 @RequiredArgsConstructor
-@EnableConfigurationProperties(BootstrapAdminProperties.class)
+@EnableConfigurationProperties({BootstrapAdminProperties.class, AppSecurityProperties.class})
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -35,6 +35,16 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
+            .cors(cors -> {})
+            .headers(headers -> headers
+                .contentTypeOptions(contentType -> {})
+                .frameOptions(frameOptions -> frameOptions.deny())
+                .referrerPolicy(referrer -> referrer.policy(
+                    org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter.ReferrerPolicy
+                        .STRICT_ORIGIN_WHEN_CROSS_ORIGIN
+                ))
+                .permissionsPolicy(permissions -> permissions.policy("geolocation=(), microphone=(), camera=()"))
+            )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .exceptionHandling(exception -> exception.authenticationEntryPoint(restAuthenticationEntryPoint))
             .authorizeHttpRequests(authorize -> authorize

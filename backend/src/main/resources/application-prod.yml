@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: ${SERVER_PORT:8080}
+  forward-headers-strategy: framework
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET}
+      expiration: ${JWT_EXPIRATION:86400000}
+    cors:
+      allowed-origins:
+        - ${FRONTEND_ORIGIN}
+  bootstrap:
+    admin:
+      name: ${BOOTSTRAP_ADMIN_NAME}
+      email: ${BOOTSTRAP_ADMIN_EMAIL}
+      password: ${BOOTSTRAP_ADMIN_PASSWORD}
