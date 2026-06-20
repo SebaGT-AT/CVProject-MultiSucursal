@@ -7,6 +7,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -15,6 +16,9 @@ app:
     jwt:
       secret: bXVsdGlzdWN1cnNhbC10ZXN0LXNlY3JldC1rZXktMjAyNi1sb25nLWVub3VnaA==
       expiration: 86400000
+    cors:
+      allowed-origins:
+        - http://localhost:5173
   bootstrap:
     admin:
       name: Test Admin
