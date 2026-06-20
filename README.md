@@ -55,6 +55,20 @@ cd backend
 mvn test
 ```
 
+## Despliegue con Docker
+
+1. Copiar `.env.example` a `.env` y completar secretos reales.
+2. Ejecutar:
+
+```bash
+docker compose up --build
+```
+
+Servicios esperados:
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:8080`
+- PostgreSQL: `localhost:5432`
+
 La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`. Si no existen, toma valores locales por defecto para PostgreSQL.
 
 ## Documentación por etapas
@@ -68,6 +82,7 @@ La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
 - [Etapa 7 - Compras](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-07-compras.md)
 - [Etapa 8 - Ventas](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-08-ventas.md)
 - [Etapa 9 - Dashboard e indicadores](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-09-dashboard-indicadores.md)
+- [Etapa 10 - Hardening, testing y despliegue](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-10-hardening-testing-despliegue.md)
 
 ### Frontend
 
