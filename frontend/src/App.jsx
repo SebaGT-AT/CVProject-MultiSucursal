@@ -6,6 +6,7 @@ import DashboardHomePage from "./pages/DashboardHomePage";
 import LoginPage from "./pages/LoginPage";
 import ModulePlaceholderPage from "./pages/ModulePlaceholderPage";
 import ProductsPage from "./pages/ProductsPage";
+import PurchasesPage from "./pages/PurchasesPage";
 import StockPage from "./pages/StockPage";
 
 function App() {
@@ -21,6 +22,17 @@ function App() {
           <Route path="productos" element={<ProductsPage />} />
           <Route path="sucursales" element={<BranchesPage />} />
           <Route path="stock" element={<StockPage />} />
+          <Route path="compras" element={<PurchasesPage />} />
+          <Route
+            path="ventas"
+            element={
+              <ModulePlaceholderPage
+                title="Ventas"
+                description="La base del frontend ya esta lista para registrar ventas y descontar stock con el backend."
+                nextStep="Despues de compras podemos conectar ventas reutilizando sucursales, productos y stock."
+              />
+            }
+          />
         </Route>
       </Route>
 
