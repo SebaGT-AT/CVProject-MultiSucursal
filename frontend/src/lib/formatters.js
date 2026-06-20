@@ -11,6 +11,14 @@ const dateFormatter = new Intl.DateTimeFormat("es-CL", {
   year: "numeric"
 });
 
+const dateTimeFormatter = new Intl.DateTimeFormat("es-CL", {
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
 export function formatCurrency(value) {
   return currencyFormatter.format(Number(value ?? 0));
 }
@@ -21,4 +29,12 @@ export function formatLongDate(value) {
   }
 
   return dateFormatter.format(new Date(`${value}T00:00:00`));
+}
+
+export function formatDateTime(value) {
+  if (!value) {
+    return "--";
+  }
+
+  return dateTimeFormatter.format(new Date(value));
 }
