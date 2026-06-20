@@ -45,6 +45,7 @@ MultiSucursal/
 14. Frontend de sucursales
 15. Frontend de stock y movimientos
 16. Frontend de compras
+17. Frontend de ventas
 
 ## Cómo ejecutar más adelante
 
@@ -95,6 +96,7 @@ La aplicación usa variables opcionales `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
 - [Etapa 14 - Frontend de sucursales](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-14-frontend-sucursales.md)
 - [Etapa 15 - Frontend de stock y movimientos](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-15-frontend-stock.md)
 - [Etapa 16 - Frontend de compras](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-16-frontend-compras.md)
+- [Etapa 17 - Frontend de ventas](C:/Users/sebag/Documents/MultiSucursal/docs/etapa-17-frontend-ventas.md)
 
 ### Frontend
 

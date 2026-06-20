@@ -6,7 +6,8 @@ const sections = [
   { to: "/app/productos", label: "Productos" },
   { to: "/app/sucursales", label: "Sucursales" },
   { to: "/app/stock", label: "Stock" },
-  { to: "/app/compras", label: "Compras" }
+  { to: "/app/compras", label: "Compras" },
+  { to: "/app/ventas", label: "Ventas" }
 ];
 
 function AuthShell() {
