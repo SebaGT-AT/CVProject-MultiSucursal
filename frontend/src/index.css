@@ -352,6 +352,36 @@ li {
   background: rgba(255, 255, 255, 0.6);
 }
 
+.branch-card {
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(92, 72, 46, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.branch-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.branch-meta-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.branch-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 991.98px) {
   .auth-page {
     grid-template-columns: 1fr;
@@ -380,5 +410,9 @@ li {
   .category-item {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .branch-meta-grid {
+    grid-template-columns: 1fr;
   }
 }

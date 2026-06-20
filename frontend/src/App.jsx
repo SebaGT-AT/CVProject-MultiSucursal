@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AuthShell from "./components/AuthShell";
+import BranchesPage from "./pages/BranchesPage";
 import DashboardHomePage from "./pages/DashboardHomePage";
 import LoginPage from "./pages/LoginPage";
 import ModulePlaceholderPage from "./pages/ModulePlaceholderPage";
@@ -17,16 +18,7 @@ function App() {
           <Route path="" element={<Navigate replace to="/app/dashboard" />} />
           <Route path="dashboard" element={<DashboardHomePage />} />
           <Route path="productos" element={<ProductsPage />} />
-          <Route
-            path="sucursales"
-            element={
-              <ModulePlaceholderPage
-                title="Sucursales"
-                description="La sesion y el layout ya estan listos para mostrar administracion de sucursales."
-                nextStep="Despues del dashboard conectaremos sucursales, stock y movimientos desde el backend."
-              />
-            }
-          />
+          <Route path="sucursales" element={<BranchesPage />} />
           <Route
             path="stock"
             element={
